@@ -144,7 +144,7 @@ export function AccountPage() {
               onClick={() => chooseMethod(m)}
               className={`min-h-11 rounded-lg ${method === m ? 'bg-white font-semibold shadow' : 'text-gray-700'}`}
             >
-              {m === 'popup' ? 'Fenster (Standard)' : 'Weiterleitung'}
+              {m === 'popup' ? 'Fenster' : 'Weiterleitung'}
             </button>
           ))}
         </div>

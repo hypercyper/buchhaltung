@@ -68,8 +68,19 @@ export function setAccountEmailHint(email: string): void {
   else localStorage.removeItem(EMAIL_KEY);
 }
 
+/** iPhone/iPad (iPadOS reports itself as "Macintosh" but has a touch screen). */
+export function isAppleMobile(userAgent = navigator.userAgent, maxTouchPoints = navigator.maxTouchPoints ?? 0): boolean {
+  return /iPhone|iPad|iPod/.test(userAgent) || (/Macintosh/.test(userAgent) && maxTouchPoints > 1);
+}
+
+/**
+ * Saved choice, otherwise: redirect on iOS/iPadOS (popups are unreliable in installed web apps there),
+ * popup everywhere else (allows silent token renewal).
+ */
 export function getPreferredMethod(): AuthMethod {
-  return localStorage.getItem(METHOD_KEY) === 'redirect' ? 'redirect' : 'popup';
+  const saved = localStorage.getItem(METHOD_KEY);
+  if (saved === 'redirect' || saved === 'popup') return saved;
+  return isAppleMobile() ? 'redirect' : 'popup';
 }
 
 export function setPreferredMethod(method: AuthMethod): void {

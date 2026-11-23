@@ -51,12 +51,17 @@ Die App läuft dann unter `https://<user>.github.io/<repo>/`.
 ### C) Übergabe an die Nutzerin
 
 - Link schicken.
-  - iPhone: in **Safari** öffnen → Teilen → „Zum Home-Bildschirm“.
+  - iPhone und iPad: in **Safari** öffnen → Teilen → „Zum Home-Bildschirm“.
   - Android: in **Chrome** öffnen → „App installieren“.
 - App öffnen → „Mit Google anmelden“ → Zugriff erlauben → Name eintragen. Fertig.
-- Klappt die Anmeldung in der installierten App nicht (bekanntes iOS-Thema): beim Fehlerhinweis
-  „Anderen Anmeldeweg versuchen“ antippen, oder später unter Einstellungen → Google-Konto & Sicherung →
-  „Probleme bei der Anmeldung?“ auf **Weiterleitung** umstellen.
+- Mehrere Geräte (z. B. iPhone und iPad): auf jedem Gerät installieren und mit **demselben** Google-Konto anmelden.
+  Die Daten gleichen sich über Google Drive ab.
+- Anmeldeweg: Auf iPhone/iPad ist **Weiterleitung** voreingestellt (Popups sind dort in installierten Web-Apps
+  unzuverlässig), sonst **Fenster**. Umschalten unter Einstellungen → Google-Konto & Sicherung →
+  „Probleme bei der Anmeldung?“ oder beim Fehlerhinweis im Onboarding.
+- Hinweis iOS: Googles Zugriff gilt etwa eine Stunde und lässt sich per Weiterleitung nicht unbemerkt erneuern.
+  Ist er abgelaufen, erscheint oben „Bitte erneut mit Google verbinden“ – ein Tipp genügt. Erfassen geht auch
+  ohne Verbindung; gesichert wird danach automatisch.
 
 **Langfristig:** Google-Cloud-Projekt und GitHub-Repo nicht löschen, sonst funktioniert die Anmeldung nicht mehr.
 Die Daten in Drive bleiben in jedem Fall erhalten.

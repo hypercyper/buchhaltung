@@ -63,7 +63,7 @@ export function App({ cameBackFromRedirect }: { cameBackFromRedirect: boolean })
 
   return (
     <>
-      <main className="mx-auto max-w-md p-4" style={{ paddingBottom: 'calc(6rem + env(safe-area-inset-bottom))' }}>
+      <main className="mx-auto max-w-md p-4 md:max-w-2xl" style={{ paddingBottom: 'calc(6rem + env(safe-area-inset-bottom))' }}>
         {page}
       </main>
       <BottomNav path={path} />

@@ -1,5 +1,18 @@
 import { describe, expect, it } from 'vitest';
-import { isTokenValid } from './auth';
+import { isAppleMobile, isTokenValid } from './auth';
+
+describe('isAppleMobile', () => {
+  it('detects iPhone, iPad and iPadOS desktop-mode UA', () => {
+    expect(isAppleMobile('Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)', 5)).toBe(true);
+    expect(isAppleMobile('Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X)', 5)).toBe(true);
+    expect(isAppleMobile('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari', 5)).toBe(true);
+  });
+  it('does not match real Macs, Android or Windows', () => {
+    expect(isAppleMobile('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari', 0)).toBe(false);
+    expect(isAppleMobile('Mozilla/5.0 (Linux; Android 14; Pixel 8)', 5)).toBe(false);
+    expect(isAppleMobile('Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 0)).toBe(false);
+  });
+});
 import { parseTokenFragment } from './redirectProvider';
 
 describe('isTokenValid', () => {
