@@ -4,8 +4,16 @@ Verbindlicher Bauplan: `PLAN.md`. Phasen aus Abschnitt 10 der Reihe nach.
 Änderung 23.11.2026 (Johannes): **nicht mehr nach jeder Phase anhalten** – alles durchprogrammieren, nur im Notfall fragen. Pro Phase ein Commit.
 
 ## Stand
-- Phase 1–6 gebaut (23.11.2026). Offen, braucht Johannes: GitHub-Repo + Google-OAuth-Client anlegen,
-  dann Gerätetest (Login in installierter App auf iPhone und Android, zwei Geräte synchron).
+- Phase 1–6 gebaut und live (23.11.2026). Offen: Gerätetest durch Johannes (Login in installierter App auf
+  iPhone und Android, zwei Geräte synchron).
+
+## Infrastruktur
+- Live: https://hypercyper.github.io/buchhaltung/ · Repo: `hypercyper/buchhaltung` (öffentlich), Pages über Actions
+- Repo-Variable `VITE_GOOGLE_CLIENT_ID` gesetzt; lokal in `.env`
+- Google Cloud: Projekt `buchhaltung-515612`, Konto kammerer.johannes@googlemail.com. Drive API aktiv,
+  Scope `drive.file`, Status „In Produktion“, Nutzertyp Extern. OAuth-Client „Buchhaltung PWA“ (Webanwendung):
+  Quellen `https://hypercyper.github.io`, `http://localhost:5173`; Redirects `https://hypercyper.github.io/buchhaltung/`,
+  `http://localhost:5173/buchhaltung/`. Datenschutz-Link: `/buchhaltung/datenschutz.html` (`public/datenschutz.html`).
 
 ## Stack
 Vite + React + TypeScript, Tailwind CSS v4 (`@tailwindcss/vite`), vite-plugin-pwa, Dexie, jspdf + jspdf-autotable,
