@@ -56,6 +56,18 @@ export function getAccessToken(): string | null {
   return isTokenValid(token) ? token!.accessToken : null;
 }
 
+const EMAIL_KEY = 'auth.email';
+
+/** Connected account; also used as login_hint so renewals skip the account chooser. */
+export function getAccountEmailHint(): string {
+  return localStorage.getItem(EMAIL_KEY) ?? '';
+}
+
+export function setAccountEmailHint(email: string): void {
+  if (email) localStorage.setItem(EMAIL_KEY, email);
+  else localStorage.removeItem(EMAIL_KEY);
+}
+
 export function getPreferredMethod(): AuthMethod {
   return localStorage.getItem(METHOD_KEY) === 'redirect' ? 'redirect' : 'popup';
 }

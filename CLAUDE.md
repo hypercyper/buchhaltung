@@ -1,10 +1,11 @@
 # Buchhaltungs-PWA (Nadine, EÜR)
 
-Verbindlicher Bauplan: `PLAN.md`. Phasen aus Abschnitt 10 der Reihe nach, **nach jeder Phase anhalten und Freigabe abwarten**.
+Verbindlicher Bauplan: `PLAN.md`. Phasen aus Abschnitt 10 der Reihe nach.
+Änderung 23.11.2026 (Johannes): **nicht mehr nach jeder Phase anhalten** – alles durchprogrammieren, nur im Notfall fragen. Pro Phase ein Commit.
 
 ## Stand
-- Phase 1 (Gerüst & Auth-Spike): in Arbeit / zur Abnahme
-- Phase 2–6: offen
+- Phase 1 (Gerüst & Auth-Spike): gebaut, Gerätetest (iPhone/Android installiert) steht noch aus
+- Phase 2–6: in Arbeit
 
 ## Stack
 Vite + React + TypeScript, Tailwind CSS v4 (`@tailwindcss/vite`), vite-plugin-pwa, Vitest.

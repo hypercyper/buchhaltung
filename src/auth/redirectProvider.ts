@@ -1,6 +1,6 @@
 // Fallback: classic OAuth 2.0 implicit flow via full-page redirect.
 // Google redirects back to the app URL with the token in the URL fragment.
-import { AuthProvider, DRIVE_SCOPE, clearToken, getClientId, saveToken } from './auth';
+import { AuthProvider, DRIVE_SCOPE, clearToken, getAccountEmailHint, getClientId, saveToken } from './auth';
 
 const STATE_KEY = 'auth.redirectState';
 
@@ -59,6 +59,7 @@ export const redirectProvider: AuthProvider = {
       response_type: 'token',
       scope: DRIVE_SCOPE,
       include_granted_scopes: 'true',
+      ...(getAccountEmailHint() ? { login_hint: getAccountEmailHint() } : {}),
       state,
     });
     window.location.assign(`https://accounts.google.com/o/oauth2/v2/auth?${params}`);

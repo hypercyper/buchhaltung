@@ -1,5 +1,5 @@
 // Google Identity Services token client (popup based).
-import { AuthProvider, DRIVE_SCOPE, clearToken, getClientId, loadToken, saveToken } from './auth';
+import { AuthProvider, DRIVE_SCOPE, clearToken, getAccountEmailHint, getClientId, loadToken, saveToken } from './auth';
 
 const GIS_SRC = 'https://accounts.google.com/gsi/client';
 
@@ -10,7 +10,7 @@ interface TokenResponse {
 }
 
 interface TokenClient {
-  requestAccessToken(overrides?: { prompt?: string }): void;
+  requestAccessToken(overrides?: { prompt?: string; login_hint?: string }): void;
 }
 
 interface GoogleOAuth2 {
@@ -63,13 +63,14 @@ async function requestToken(prompt: string): Promise<void> {
       },
       error_callback: (error) => reject(new Error(error.type)),
     });
-    client.requestAccessToken({ prompt });
+    client.requestAccessToken({ prompt, login_hint: getAccountEmailHint() || undefined });
   });
 }
 
 export const gisProvider: AuthProvider = {
   method: 'popup',
-  signIn: () => requestToken('consent'),
+  // '' = consent only when not granted yet; otherwise just account confirmation.
+  signIn: () => requestToken(''),
   async trySilentRefresh() {
     try {
       await requestToken('');

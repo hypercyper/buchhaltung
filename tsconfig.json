@@ -10,9 +10,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "isolatedModules": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "noEmit": true,
     "types": ["vite/client", "vite-plugin-pwa/client"]
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["src/**/*.test.ts"]
 }

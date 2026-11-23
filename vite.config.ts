@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import pkg from './package.json' with { type: 'json' };
 
 // GitHub Pages serves the app under /<repo>/. The workflow sets VITE_BASE from the repo name.
 const DEFAULT_BASE = '/buchhaltung/';
@@ -12,6 +13,11 @@ export default defineConfig(({ mode }) => {
 
   return {
     base,
+    // exceljs/jspdf are lazy-loaded report chunks; their size does not affect app start.
+    build: { chunkSizeWarningLimit: 1000 },
+    define: {
+      __APP_VERSION__: JSON.stringify(pkg.version),
+    },
     plugins: [
       react(),
       tailwindcss(),
