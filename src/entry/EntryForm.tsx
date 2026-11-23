@@ -105,10 +105,16 @@ export function EntryForm({ request }: { request: EditorRequest }) {
   const accent = income ? 'bg-emerald-700' : 'bg-red-700';
 
   return (
-    <div className="fixed inset-0 z-40 overflow-y-auto bg-white" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="entry-form-title"
+      className="fixed inset-0 z-40 overflow-y-auto bg-white"
+      style={{ paddingTop: 'env(safe-area-inset-top)' }}
+    >
       <form onSubmit={save} className="mx-auto flex max-w-md flex-col gap-4 p-4 pb-10" noValidate>
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold">
+          <h1 id="entry-form-title" className="text-2xl font-bold">
             {editing ? 'Buchung bearbeiten' : income ? 'Neue Einnahme' : 'Neue Ausgabe'}
           </h1>
           <button type="button" className="icon-btn" aria-label="Schließen" onClick={close}>

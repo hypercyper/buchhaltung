@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Full-bleed background; content kept inside the maskable safe zone via the scale group. -->
+  <rect width="512" height="512" fill="#0f766e"/>
+  <g transform="translate(256 256) scale(SCALE) translate(-256 -256)">
+    <rect x="126" y="70" width="260" height="340" rx="28" fill="#ffffff"/>
+    <rect x="166" y="118" width="180" height="16" rx="8" fill="#99d5cd"/>
+    <rect x="166" y="152" width="120" height="16" rx="8" fill="#99d5cd"/>
+    <text x="256" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="190" fill="#0f766e">€</text>
+    <circle cx="372" cy="384" r="62" fill="#059669" stroke="#ffffff" stroke-width="14"/>
+    <path d="M343 386 l20 20 l38 -42" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -45,9 +45,7 @@ export function OnboardingPage({ onDone }: { onDone: () => void }) {
       {step === 'welcome' && (
         <>
           <div className="text-center">
-            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-teal-700 text-4xl text-white" aria-hidden>
-              €
-            </div>
+            <img src={`${import.meta.env.BASE_URL}icon-192.png`} alt="" className="mx-auto mb-4 h-20 w-20 rounded-3xl" />
             <h1 className="text-3xl font-bold">Willkommen!</h1>
             <p className="mt-3 text-lg text-gray-700">
               Hier erfasst du deine Einnahmen und Ausgaben. Die App erstellt daraus Monats- und Jahresübersichten für

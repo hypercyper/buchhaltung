@@ -39,7 +39,7 @@ export function EntryList({ entries, categories }: { entries: Entry[]; categorie
     <div className="flex flex-col gap-3">
       {[...days.entries()].map(([day, list]) => (
         <section key={day}>
-          <h3 className="mb-1 text-sm font-semibold text-gray-600">{formatDateWithWeekday(day)}</h3>
+          <h2 className="mb-1 text-sm font-semibold text-gray-600">{formatDateWithWeekday(day)}</h2>
           <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white px-3">
             {list.map((e) => (
               <EntryRow key={e.id} entry={e} categories={categories} />
