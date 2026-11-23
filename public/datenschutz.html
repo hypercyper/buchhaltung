@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datenschutz – Buchhaltung</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <style>
+      body {
+        margin: 0;
+        background: #fff;
+        color: #111827;
+        font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 1.5rem 1rem 3rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin: 0 0 0.25rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+        margin: 1.75rem 0 0.25rem;
+      }
+      a {
+        color: #0f766e;
+      }
+      .muted {
+        color: #4b5563;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Datenschutzerklärung</h1>
+      <p class="muted">für die Web-App „Buchhaltung“ · Stand: November 2026</p>
+
+      <h2>Verantwortlicher</h2>
+      <p>Johannes Kammerer<br />E-Mail: <a href="mailto:kammerer.johannes@googlemail.com">kammerer.johannes@googlemail.com</a></p>
+
+      <h2>Kurz gesagt</h2>
+      <p>
+        Die App hat keinen eigenen Server und keine eigene Datenbank. Deine Buchungen werden auf deinem Gerät gespeichert
+        und als Sicherung in einer einzigen Datei in <strong>deinem eigenen Google Drive</strong> abgelegt. Der Betreiber
+        hat keinen Zugriff auf deine Daten.
+      </p>
+
+      <h2>Welche Daten verarbeitet werden</h2>
+      <ul>
+        <li>
+          <strong>Deine Eingaben</strong> (Buchungen, Kategorien, Favoriten, Name/Anschrift für den PDF-Kopf) – gespeichert
+          im Browser-Speicher deines Geräts (IndexedDB) und in der Datei <code>Buchhaltung-Daten.json</code> in deinem
+          Google Drive.
+        </li>
+        <li>
+          <strong>Google-Anmeldung:</strong> Für die Sicherung meldest du dich bei Google an. Die App erhält dabei ein
+          zeitlich begrenztes Zugriffs-Token mit der Berechtigung <code>drive.file</code>. Damit kann die App
+          <em>ausschließlich Dateien sehen, die sie selbst angelegt hat</em> – keine anderen Dateien in deinem Drive.
+          Die E-Mail-Adresse deines Google-Kontos wird nur auf deinem Gerät gespeichert und in den Einstellungen angezeigt.
+        </li>
+      </ul>
+      <p>
+        Für die Anmeldung und die Speicherung in Google Drive gilt zusätzlich die Datenschutzerklärung von Google:
+        <a href="https://policies.google.com/privacy?hl=de">policies.google.com/privacy</a>.
+      </p>
+
+      <h2>Hosting</h2>
+      <p>
+        Die App-Dateien werden über GitHub Pages (GitHub, Inc.) ausgeliefert. Beim Abruf verarbeitet GitHub technisch
+        notwendige Verbindungsdaten wie deine IP-Adresse, z. B. in Server-Protokollen. Deine Buchungsdaten werden dabei
+        nicht übertragen. Details:
+        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">GitHub-Datenschutzerklärung</a>.
+      </p>
+
+      <h2>Kein Tracking</h2>
+      <p>Die App verwendet keine Analyse- oder Werbedienste, keine Tracking-Cookies und lädt keine Schriften von fremden Servern.</p>
+
+      <h2>Rechtsgrundlage</h2>
+      <p>
+        Die Verarbeitung erfolgt, um dir die App bereitzustellen, die du selbst nutzen möchtest
+        (Art. 6 Abs. 1 lit. b DSGVO), bzw. für den technisch notwendigen Betrieb der Webseite (Art. 6 Abs. 1 lit. f DSGVO).
+      </p>
+
+      <h2>Daten löschen und Zugriff widerrufen</h2>
+      <ul>
+        <li>Daten auf dem Gerät: App vom Home-Bildschirm entfernen bzw. Website-Daten im Browser löschen.</li>
+        <li>Sicherung: die Datei <code>Buchhaltung-Daten.json</code> in deinem Google Drive löschen.</li>
+        <li>
+          Zugriff der App auf dein Google-Konto widerrufen:
+          <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+        </li>
+      </ul>
+
+      <h2>Deine Rechte</h2>
+      <p>
+        Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und
+        Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Da der Betreiber keine
+        deiner Buchungsdaten speichert, liegen diese allein bei dir. Fragen gern per E-Mail an den Verantwortlichen.
+      </p>
+
+      <p><a href="./">← Zur App</a></p>
+    </main>
+  </body>
+</html>

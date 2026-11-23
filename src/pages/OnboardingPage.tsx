@@ -56,7 +56,10 @@ export function OnboardingPage({ onDone }: { onDone: () => void }) {
             {busy ? 'Bitte warten …' : 'Mit Google anmelden'}
           </button>
           <p className="text-center text-gray-600">
-            Deine Daten werden in deinem Google Drive gesichert. Die App sieht nur ihre eigene Datei.
+            Deine Daten werden in deinem Google Drive gesichert. Die App sieht nur ihre eigene Datei.{' '}
+            <a className="underline" href={`${import.meta.env.BASE_URL}datenschutz.html`}>
+              Datenschutz
+            </a>
           </p>
           {!getClientId() && (
             <p className="rounded-xl bg-amber-50 p-3 text-amber-900">

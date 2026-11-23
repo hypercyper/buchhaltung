@@ -51,7 +51,12 @@ export function SettingsPage({ sub }: { sub: string }) {
           </li>
         ))}
       </ul>
-      <p className="text-center text-sm text-gray-500">App-Version {__APP_VERSION__}</p>
+      <p className="text-center text-sm text-gray-500">
+        App-Version {__APP_VERSION__} ·{' '}
+        <a className="underline" href={`${import.meta.env.BASE_URL}datenschutz.html`}>
+          Datenschutz
+        </a>
+      </p>
     </div>
   );
 }
